@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+    
+<title>Leniw PhotoGraphy</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+    img {
+        width:100%;
+        height: 100%;
+        overflow: visible;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: opacity ease-in;
+        transition-duration: 3s;  
+    }
+        img + img { opacity: 0.0; }
+
+   body {
+        margin: 0;
+        font-size: 28px;
+        font-family: "Montserrat";
+    }
+
+    .header {
+        
+        font-family: "Montserrat";
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 42vh;
+        letter-spacing: 10px;
+
+        padding: 10px;
+        text-align: center;
+  
+        background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 45px;
+	line-height: .05;
+	margin: -150px 0;
+}
+
+   * {
+          box-sizing: border-box;
+        }
+        /* Position text in the middle of the page/image */
+        
+        #bg-text {
+            
+            border: 14px solid #f1f1f1;
+            box-shadow: 10px 10px 30px black;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+     
+            padding: 120px;
+            text-align: center;
+            text-transform: uppercase;
+            width: 950px;
+            height: 500px;
+        }
+        
+</style>
+
+ 
+
+ <body>
+     
+ <div id="bg-text">
+     <a class="header" href="html_files/Portfolio.html"><h2>Le&#8469i&#9728</h2></a> 
+      <a class="header" href="html_files/Portfolio.html"><p> Ph&#9974t&#9974Graphy</p></a> 
+</div>
+     
+    
+<img src="images/Feet.jpg"> 
+<img src="images/Minimal.jpg">
+<img src="images/Mountains.jpg">
+<img src="images/Boy.jpg">
+
+
+
+<script>
+    
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+        
+                var current = 0,
+                    slides = document.getElementsByTagName("img");
+
+                setInterval(function() {
+                  for (var i = 0; i < slides.length; i++) {
+                    slides[i].style.opacity = 0;
+                  }
+                  current = (current != slides.length - 1) ? current + 1 : 0;
+                  slides[current].style.opacity = 1;},4000);
+         }
+          
+          
+</script>
+
+</body>
+</html>

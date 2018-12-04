@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    margin: 0;
+    text-transform: uppercase;
+    background: url(../images/i.gif); background-size:50%;
+}
+
+.header {
+        font-family: "Montserrat";
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        letter-spacing: 10px;
+
+        padding: 10px;
+        text-align: center;
+  
+        background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 45px;
+	line-height: .05;
+	margin: -150px 0;
+}
+
+    #navbar {
+        overflow: hidden;
+        background-color: whitesmoke;
+        border: 2px solid grey;
+        box-shadow: 6px 6px 50.5px black;
+      }
+
+    #navbar a {
+      text-decoration: none;
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 15px 90px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 1px;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    #navbar a:hover {
+      background-color: #ddd;
+      color: black;
+      box-shadow: 1px 1px 10px black;
+    }
+
+    #navbar a.active {
+      background-color: #E6E6FA;
+      color: black;
+      box-shadow: 1px 1px 15px black;
+    }
+
+    .content {
+        padding: 16px;
+    }
+    
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  overflow: hidden;
+  width: 32%;
+  display: block;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 10px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  font-family: "Montserrat";
+  font-weight: bold;
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: -5px;
+  right: 25px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Le&#8469i&#9728</h2>
+  <p> Ph&#9974t&#9974Graphy</p>
+</div>
+
+<div id="navbar">
+  <a href="../html_files/Portfolio.html">Portfolio</a>
+  <a href="../html_files/Black&White.html">Black & White</a>
+   <a class="active" href="html_files/Nature&Landscapes.html">Nature & Landscapes</a>
+  <a href="../html_files/Contact.html">Contact</a>
+  
+</div>
+
+<div class="row">
+  <div class="column">
+    <img src="../images/He_Rocks.jpg" style="width:98%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="../images/Balos.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/Beauty.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/Woods.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>  
+     <div class="column">
+    <img src="../images/Gaidouronisi.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+  </div> 
+     <div class="column">
+    <img src="../images/Boat_Sea.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+  </div>
+     <div class="column">
+    <img src="../images/Kid.jpg" style="width:97%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/Total_Blue.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+  </div>
+     <div class="column">
+    <img src="../images/Sea.jpg" style="width:100%" onclick="openModal();currentSlide(9)" class="hover-shadow cursor">
+  </div>
+     <div class="column">
+    <img src="../images/Meteora.jpg" style="width:95%" onclick="openModal();currentSlide(10)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/Moon.jpg" style="width:96%" onclick="openModal();currentSlide(11)" class="hover-shadow cursor">
+  </div>
+     <div class="column">
+    <img src="../images/Red.jpg" style="width:96%" onclick="openModal();currentSlide(12)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/Walking.jpg" style="width:95%" onclick="openModal();currentSlide(13)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/Chania.jpg" style="width:95%" onclick="openModal();currentSlide(14)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/Blue.jpg" style="width:95%" onclick="openModal();currentSlide(15)" class="hover-shadow cursor">
+  </div>
+     <div class="column">
+    <img src="../images/Kefallonia.jpg" style="width:95%" onclick="openModal();currentSlide(16)" class="hover-shadow cursor">
+  </div>
+     <div class="column">
+    <img src="../images/Porto.jpg" style="width:100%" onclick="openModal();currentSlide(17)" class="hover-shadow cursor">
+  </div>
+     <div class="column">
+    <img src="../images/Man.jpg" style="width:100%" onclick="openModal();currentSlide(18)" class="hover-shadow cursor">
+  </div>
+     <div class="column">
+    <img src="../images/White_Sea.jpg" style="width:100%" onclick="openModal();currentSlide(19)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/Green.jpg" style="width:100%" onclick="openModal();currentSlide(20)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/Green_Sea.jpg" style="width:100%" onclick="openModal();currentSlide(21)" class="hover-shadow cursor">
+  </div>
+     <div class="column">
+    <img src="../images/Land.jpg" style="width:100%" onclick="openModal();currentSlide(22)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/Beach.jpg" style="width:100%" onclick="openModal();currentSlide(23)" class="hover-shadow cursor">
+  </div>
+     <div class="column">
+    <img src="../images/Lighthouse.jpg" style="width:100%" onclick="openModal();currentSlide(24)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/Fishing.jpg" style="width:100%" onclick="openModal();currentSlide(25)" class="hover-shadow cursor">
+  </div>
+     <div class="column">
+    <img src="../images/Blue_Boat.jpg" style="width:100%" onclick="openModal();currentSlide(26)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/Love.jpg" style="width:100%" onclick="openModal();currentSlide(27)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="../images/View.jpg" style="width:120%" onclick="openModal();currentSlide(28)" class="hover-shadow cursor">
+  </div>
+    
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 28</div>
+      <img src="../images/He_Rocks.jpg" style="width:80%;">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 28</div>
+      <img src="../images/Balos.jpg" style="width:80%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 28</div>
+      <img src="../images/Beauty.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">4 / 28</div>
+      <img src="../images/Woods.jpg" style="width:80%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">5 / 28</div>
+      <img src="../images/Gaidouronisi.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">6 / 28</div>
+      <img src="../images/Boat_Sea.jpg" style="width:80%">
+    </div>
+       <div class="mySlides">
+      <div class="numbertext">7 / 28</div>
+      <img src="../images/Kid.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">8 / 28</div>
+      <img src="../images/Total_Blue.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">9 / 28</div>
+      <img src="../images/Sea.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">10 / 28</div>
+      <img src="../images/Meteora.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">11 / 28</div>
+      <img src="../images/Moon.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">12 / 28</div>
+      <img src="../images/Red.jpg" style="width:80%">
+    </div>
+      
+          <div class="mySlides">
+      <div class="numbertext">13 / 28</div>
+      <img src="../images/Walking.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">14 / 28</div>
+      <img src="../images/Chania.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">15 / 28</div>
+      <img src="../images/Blue.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">16 / 28</div>
+      <img src="../images/Kefallonia.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">17 / 28</div>
+      <img src="../images/Porto.jpg" style="width:80%">
+    </div>
+      
+          <div class="mySlides">
+      <div class="numbertext">18 / 28</div>
+      <img src="../images/Man.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">19 / 28</div>
+      <img src="../images/White_Sea.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">20 / 28</div>
+      <img src="../images/Green.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">21 / 28</div>
+      <img src="../images/Green_Sea.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">22 / 28</div>
+      <img src="../images/Land.jpg" style="width:80%">
+    </div>
+      
+        <div class="mySlides">
+      <div class="numbertext">23 / 28</div>
+      <img src=../images/Beach.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">24 / 28</div>
+      <img src="../images/Lighthouse.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">25 / 28</div>
+      <img src="../images/Fishing.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">26 / 28</div>
+      <img src="../images/Blue_Boat.jpg" style="width:80%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">27 / 28</div>
+      <img src="../images/Love.jpg" style="width:80%">
+    </div>
+      
+          <div class="mySlides">
+      <div class="numbertext">28 / 28</div>
+      <img src="../images/View.jpg" style="width:80%">
+    </div>
+      
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="../images/He_Rocks.jpg" style="width:84%" onclick="currentSlide(1)" alt="Man On The Rocks">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Balos.jpg" style="width:85%" onclick="currentSlide(2)" alt="Balos View">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Beauty.jpg" style="width:86%" onclick="currentSlide(3)" alt="Beautiful Sunlight">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Woods.jpg" style="width:82%" onclick="currentSlide(4)" alt="Woods">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Gaidouronisi.jpg" style="width:84%" onclick="currentSlide(5)" alt="Gaidouronisi">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Boat_Sea.jpg" style="width:84%" onclick="currentSlide(6)" alt="Boat">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/kid.jpg" style="width:85%" onclick="currentSlide(7)" alt="Kid">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Total_Blue.jpg" style="width:90%" onclick="currentSlide(8)" alt="The Total Blue">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Sea.jpg" style="width:90%" onclick="currentSlide(9)" alt="Sea">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Meteora.jpg" style="width:90%" onclick="currentSlide(10)" alt="Meteora">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Moon.jpg" style="width:90%" onclick="currentSlide(11)" alt="Moon">
+    </div>   
+      <div class="column">
+      <img class="demo cursor" src="../images/Red.jpg" style="width:90%" onclick="currentSlide(12)" alt="Red Clouds">
+    </div>
+       <div class="column">
+      <img class="demo cursor" src="../images/Walking.jpg" style="width:85%" onclick="currentSlide(13)" alt="Walking">
+    </div>   
+      <div class="column">
+      <img class="demo cursor" src="../images/Chania.jpg" style="width:90%" onclick="currentSlide(14)" alt="Lighthouse in Chania">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Blue.jpg" style="width:90%" onclick="currentSlide(15)" alt="Ithaca">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Kefallonia.jpg" style="width:90%" onclick="currentSlide(16)" alt="Kefallonia">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Porto.jpg" style="width:90%" onclick="currentSlide(17)" alt="Porto Katsiki">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Man.jpg" style="width:90%" onclick="currentSlide(18)" alt="Greek Man">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/White_Sea.jpg" style="width:90%" onclick="currentSlide(19)" alt="Sea">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Green.jpg" style="width:90%" onclick="currentSlide(20)" alt="Swimming">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Green_Sea.jpg" style="width:90%" onclick="currentSlide(21)" alt="Green Sea">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Land.jpg" style="width:90%" onclick="currentSlide(22)" alt="Land">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Beach.jpg" style="width:90%" onclick="currentSlide(23)" alt="Beach">
+    </div>   
+       <div class="column">
+      <img class="demo cursor" src="../images/Lighthouse.jpg" style="width:90%" onclick="currentSlide(24)" alt="Lighthouse">
+    </div>  
+      <div class="column">
+      <img class="demo cursor" src="../images/Fishing.jpg" style="width:90%" onclick="currentSlide(25)" alt="Nydri">
+    </div>
+       <div class="column">
+      <img class="demo cursor" src="../images/Blue_Boat.jpg" style="width:90%" onclick="currentSlide(26)" alt="Cloudy Boat">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/Love.jpg" style="width:90%" onclick="currentSlide(27)" alt="Blue love">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/View.jpg" style="width:90%" onclick="currentSlide(28)" alt="View">
+    </div>  
+  </div>
+</div>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+
+</script>
+
+</body>
+</html>
