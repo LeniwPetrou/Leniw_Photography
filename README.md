@@ -10,7 +10,7 @@ The project has been deployed and you can check it out [here](https://leniwpetro
 
 ## Sneak Preview
 
-Here is a **sneak preview** and some **highlights** of the photo-gallery:
+Here is a **sneak preview** and some **highlights** of the project:
 
 
 * **Welcome page**
