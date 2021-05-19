@@ -13,12 +13,12 @@ The project has been deployed and you can check it out [here](https://leniwpetro
 Here is a **sneak preview** and some **highlights** of the project:
 
 
-* **Welcome page**
+* **Website welcome page**
 
 ![](welcomePage.gif) 
 
 
 
-* **Black & White tab** 
+* **Exploring the photo-gallery** 
 
 ![](sneakPreview.gif)
