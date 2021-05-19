@@ -1,4 +1,4 @@
-# Photography Website
+# Photo-Gallery Website
 
 My first attempt of writing a *web based project*. 
 The project is a *photo-gallery* about my personal photos and was built with **HTML** and **CSS**.
