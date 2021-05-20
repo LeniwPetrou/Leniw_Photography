@@ -5,7 +5,7 @@ The project is a *photo-gallery* about my personal photos and was built with **H
 
 ## Demo
 
-The project has been deployed and you can check it out [here](https://leniwpetrou.github.io/photographyWebsite-HTML-CSS/).
+The project has been deployed and you can check it out [here](https://leniwpetrou.github.io/photo-gallery-website-HTML-CSS/).
 
 
 ## Sneak Preview
